@@ -7,14 +7,16 @@
     <Authors>Kirollos</Authors>
     <Description>An Oxide extension for Discord.</Description>
     <RepositoryUrl>https://github.com/Kirollos/Oxide.Ext.Discord</RepositoryUrl>
-    <TargetFrameworks>net46;net48</TargetFrameworks>
+	  <TargetFrameworks>net48</TargetFrameworks>
     <LangVersion>7.0</LangVersion>
     <PackageVersion>2.1.9.0</PackageVersion>
     <AssemblyVersion>2.1.9</AssemblyVersion>
     <FileVersion>2.1.9</FileVersion>
   </PropertyGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
-  <PropertyGroup />
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>Oxide.Ext.Discord.xml</DocumentationFile>
     <NoWarn>1701;1702</NoWarn>
@@ -35,5 +37,10 @@
     <PackageReference Include="WebSocketSharpFork" Version="1.0.*">
       <ExcludeAssets>all</ExcludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Oxide.Ext.Discord.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
